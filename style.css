@@ -1,0 +1,282 @@
+/* GreenLeaf Garden Services - main stylesheet */
+:root {
+    --dark-green: #174d32;
+    --medium-green: #24633e;
+    --light-green: #8bcf68;
+    --pale-green: #edf5e9;
+    --text: #26352b;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: #f8faf7;
+}
+
+.site-header {
+    background: var(--dark-green);
+    color: var(--white);
+    padding: 17px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.navigation {
+    display: flex;
+    gap: 22px;
+}
+
+.navigation a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navigation a:hover,
+.navigation a:focus {
+    color: #b8e3a7;
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: 0;
+    color: white;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+.hero {
+    min-height: 470px;
+    padding: 90px 8%;
+    display: flex;
+    align-items: center;
+    color: white;
+    background:
+        linear-gradient(rgba(12, 45, 27, 0.68), rgba(12, 45, 27, 0.68)),
+        url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1600&q=85") center/cover;
+}
+
+.hero-content {
+    max-width: 660px;
+}
+
+.eyebrow {
+    color: var(--medium-green);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.hero .eyebrow {
+    color: #c9efb8;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 54px);
+    line-height: 1.12;
+    margin-bottom: 18px;
+}
+
+.hero p:not(.eyebrow) {
+    font-size: 18px;
+    margin-bottom: 26px;
+}
+
+.button {
+    display: inline-block;
+    background: var(--light-green);
+    color: #173c26;
+    padding: 12px 22px;
+    border: 0;
+    border-radius: 5px;
+    text-decoration: none;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #a6e486;
+}
+
+.section {
+    padding: 68px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin: 0 auto 35px;
+}
+
+.section-heading h2 {
+    color: var(--dark-green);
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.about-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.services-section,
+.contact-section {
+    background: var(--pale-green);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 28px 23px;
+    border-radius: 9px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+}
+
+.service-icon {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.service-card h3 {
+    color: var(--medium-green);
+    margin-bottom: 10px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 28px;
+    max-width: 950px;
+    margin: auto;
+}
+
+.contact-details,
+.contact-form {
+    background: var(--white);
+    padding: 28px;
+    border-radius: 9px;
+}
+
+.contact-details h3 {
+    color: var(--dark-green);
+    margin-bottom: 12px;
+}
+
+.contact-details p {
+    margin-bottom: 12px;
+}
+
+.contact-form label {
+    display: block;
+    margin: 12px 0 5px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #cbd8ca;
+    border-radius: 5px;
+    font: inherit;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .button {
+    margin-top: 15px;
+}
+
+.form-feedback {
+    margin-top: 12px;
+    color: var(--medium-green);
+}
+
+.site-footer {
+    background: var(--dark-green);
+    color: var(--white);
+    text-align: center;
+    padding: 22px;
+}
+
+@media (max-width: 760px) {
+    .site-header {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navigation {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+        padding: 10px 0;
+    }
+
+    .navigation.show {
+        display: flex;
+    }
+
+    .service-grid,
+    .gallery-grid,
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 48px 6%;
+    }
+
+    .hero {
+        min-height: 400px;
+        padding: 65px 6%;
+    }
+}
